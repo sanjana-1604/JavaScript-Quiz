@@ -1,0 +1,57 @@
+{
+    "Question": [
+      {
+        "Q": "Javascript is an _______ language?",
+        "A": [
+          "Object oriented",
+          "Object based",
+          "Procedural",
+          "None of the above"
+        ]
+      },
+      {
+        "Q": "Which of the following keywords is used to define a variable in Javascript?",
+        "A": [
+          "var",
+          "let",
+          "Both A & B",
+          "None of the above"
+        ]
+      },
+      {
+        "Q": "Which of the following methods is used to access HTML elements using Javascript?",
+        "A": [
+          "getElementbyId()",
+          "getElementsByClassName()",
+          "Both a & b",
+          "None of the above"
+        ]
+      },
+      {
+        "Q": "Upon encountering empty statements, what does the Javascript Interpreter do?",
+        "A": [
+          "Throws an error",
+          "Ignores the statements",
+          "Gives a warning",
+          "None of the above"
+        ]
+      },
+      {
+        "Q": "Which of the following methods can be used to display data in some form using Javascript?",
+        "A": [
+          "dcument.wrire()",
+          "console.log()",
+          "window.alert()",
+          "All of the above"
+        ]
+      },
+      {
+        "Q": "How can a datatype be declared to be a constant type?",
+        "A": [
+          "var const",
+          "let",
+          "int"
+        ]
+      }
+    ]
+  }

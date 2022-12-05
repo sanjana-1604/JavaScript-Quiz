@@ -70,7 +70,7 @@ answereOptions.addEventListener("click", (e) => {
   
     showScreen(feedback, true)
     console.log(questionCounter)
-    if(questionCounter >= 5)
+    if(questionCounter >4)
     {
         createEndScreen();
     }
@@ -87,10 +87,9 @@ answereOptions.addEventListener("click", (e) => {
     }
     else {
         feedback.innerText = "Wrong!";
-        var audio = new Audio('../sfx/ingit correct.wav');
+        var audio = new Audio('../sfx/incorrect.wav');
         audio.play();
-        timerCounter -=5; 
-        
+        timerCounter -=5;         
     }
     questionCounter++;
     resetQuestion();
@@ -105,6 +104,7 @@ function createEndScreen() {
     showScreen(endScreen, true);
     finalScore.innerText = timerCounter;
     clearTimeout(time);
+    timer.innerText = 65;
     showScreen(questionSection, false);
    
     

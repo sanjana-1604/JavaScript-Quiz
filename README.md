@@ -1,2 +1,18 @@
 # JavaScript-Quiz
-Creating online JS quiz using HTML, CSS
+
+## Deployed link
+
+## Description
+
+Created a JavaScript online quize using Java script, html, css, localstorage
+
+
+## Usage
+
+![screen shot](/img/screenshot.png)
+    
+
+
+## License
+Please visit license section for details
+

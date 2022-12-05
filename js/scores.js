@@ -17,7 +17,13 @@ length--;
 
 clearBtn.addEventListener("click", ()=>{
 localStorage.clear();
-highscores.removeChild(li);
+var child = highscores.lastElementChild;
+while(child)
+{   
+    highscores.removeChild(child);
+    child = highscores.lastElementChild;
+}
+
 
 });
  

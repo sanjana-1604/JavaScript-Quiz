@@ -111,7 +111,7 @@ inputInitials.addEventListener("click",()=>{
 submit.addEventListener("click",()=>{
     input = inputInitials.value;
     localStorage.setItem(input, timerCounter);
-    showScreen(, true);
+    location.href = "../highscores.html";
 
 });
 

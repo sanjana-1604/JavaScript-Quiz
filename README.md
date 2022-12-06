@@ -1,6 +1,7 @@
 # JavaScript-Quiz
 
 ## Deployed link
+ http://www.javascript-quiz.com/
 
 ## Description
 

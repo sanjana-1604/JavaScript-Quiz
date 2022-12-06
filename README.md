@@ -1,7 +1,7 @@
 # JavaScript-Quiz
 
 ## Deployed link
- http://www.javascript-quiz.com/
+https://sanjana-1604.github.io/JavaScript-Quiz/
 
 ## Description
 

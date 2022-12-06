@@ -17,15 +17,15 @@ let ol;
 let li;
 let button;
 let time;
+let totalQuestions;
 
 
 function showScreen(screen, toShow) {
-    if(toShow == true)
-    {
-    screen.classList.remove("hide");
-    screen.classList.add("start");
+    if (toShow == true) {
+        screen.classList.remove("hide");
+        screen.classList.add("start");
     }
-    else{
+    else {
         screen.classList.remove("start");
         screen.classList.add("hide");
     }
@@ -35,6 +35,8 @@ function showScreen(screen, toShow) {
 start_btn.addEventListener("click", (event) => {
     showScreen(questionSection, true);
     startScreen.classList.add("hide");
+    totalQuestions = Object.keys(data.Question).length;;
+
     createQuestionScreen();
     startTimer();
 });
@@ -67,34 +69,46 @@ function resetQuestion() {
 //eventListener for option buttons
 answereOptions.addEventListener("click", (e) => {
     var i = e.target.getAttribute('data-index');
-  
+
     showScreen(feedback, true)
-    console.log(questionCounter)
-    if(questionCounter >4)
-    {
+
+    if (questionCounter >= totalQuestions - 1){
+        if (data.Question[questionCounter].A[i].correct === "true") {
+
+            feedback.innerText = "Correct!";
+            var audio = new Audio('sfx/correct.wav');
+            audio.play();
+            timerCounter--;
+
+        }
+        else {
+            feedback.innerText = "Wrong!";
+            var audio = new Audio('sfx/incorrect.wav');
+            audio.play();
+            timerCounter -= 5;
+        }
         createEndScreen();
     }
-    else
-    {
-
-    if (data.Question[questionCounter].A[i].correct === "true") {
-
-        feedback.innerText = "Correct!";
-        var audio = new Audio('../sfx/correct.wav');
-        audio.play();
-        timerCounter--;
-        
-    }
     else {
-        feedback.innerText = "Wrong!";
-        var audio = new Audio('../sfx/incorrect.wav');
-        audio.play();
-        timerCounter -=5;         
+
+        if (data.Question[questionCounter].A[i].correct === "true") {
+
+            feedback.innerText = "Correct!";
+            var audio = new Audio('sfx/correct.wav');
+            audio.play();
+            timerCounter--;
+
+        }
+        else {
+            feedback.innerText = "Wrong!";
+            var audio = new Audio('sfx/incorrect.wav');
+            audio.play();
+            timerCounter -= 5;
+        }
+        questionCounter++;
+        resetQuestion();
+        createQuestionScreen();
     }
-    questionCounter++;
-    resetQuestion();
-    createQuestionScreen();
-}
 
 });
 
@@ -106,25 +120,27 @@ function createEndScreen() {
     clearTimeout(time);
     timer.innerText = 65;
     showScreen(questionSection, false);
-   
-    
 }
 
-inputInitials.addEventListener("click",()=>{
+inputInitials.addEventListener("click", () => {
     showScreen(feedback, false);
 });
-submit.addEventListener("click",()=>{
+submit.addEventListener("click", () => {
     input = inputInitials.value;
     localStorage.setItem(input, timerCounter);
-    location.href = "../highscores.html";
+    location.href = "highscores.html";
 
 });
 
 //start timer
 function startTimer() {
-    time = setInterval(() => {   
+    time = setInterval(() => {
         timer.innerText = timerCounter;
         timerCounter--;
+        if(timerCounter == 0)
+        {
+            createEndScreen();
+        }
     }, 1000);
 
 }

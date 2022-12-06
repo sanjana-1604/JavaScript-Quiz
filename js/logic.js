@@ -80,14 +80,14 @@ answereOptions.addEventListener("click", (e) => {
     if (data.Question[questionCounter].A[i].correct === "true") {
 
         feedback.innerText = "Correct!";
-        var audio = new Audio('../sfx/correct.wav');
+        var audio = new Audio('sfx/correct.wav');
         audio.play();
         timerCounter--;
         
     }
     else {
         feedback.innerText = "Wrong!";
-        var audio = new Audio('../sfx/incorrect.wav');
+        var audio = new Audio('sfx/incorrect.wav');
         audio.play();
         timerCounter -=5;         
     }
